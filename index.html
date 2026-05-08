@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Defending the 2026 Election — A Field Guide</title>
+<meta name="description" content="A field guide for tracking federal threats to U.S. elections and taking concrete action to defend them." />
+<meta property="og:title" content="Defending the 2026 Election — A Field Guide" />
+<meta property="og:description" content="What's happening, who's tracking it, and what you can actually do." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #1a1614;
+    --paper: #f4ede1;
+    --paper-deep: #ebe2d2;
+    --rule: #2a2420;
+    --accent: #b8341a;
+    --accent-deep: #8a2614;
+    --muted: #6b6258;
+    --highlight: #f5d547;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(184, 52, 26, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(26, 22, 20, 0.03) 0%, transparent 50%);
+  }
+
+  /* Subtle paper texture via SVG noise */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ================ HEADER ================ */
+  header {
+    padding: 48px 0 24px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 56px;
+  }
+
+  .masthead-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 24px;
+  }
+
+  .masthead-meta .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+    vertical-align: middle;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(48px, 8vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    font-variation-settings: "opsz" 144;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--ink);
+    max-width: 720px;
+    margin-top: 16px;
+    font-variation-settings: "opsz" 24;
+  }
+
+  .lede {
+    margin-top: 32px;
+    max-width: 680px;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .lede p + p { margin-top: 14px; }
+
+  /* ================ NAV ================ */
+  nav.toc {
+    margin: 48px 0 64px;
+    padding: 24px 0;
+    border-top: 2px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 8px 32px;
+  }
+
+  nav.toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 8px 0;
+    transition: color 0.2s, padding-left 0.2s;
+    border-bottom: 1px dotted transparent;
+  }
+
+  nav.toc a:hover {
+    color: var(--accent);
+    padding-left: 6px;
+  }
+
+  nav.toc a .num {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ================ SECTIONS ================ */
+  section {
+    margin-bottom: 88px;
+    scroll-margin-top: 24px;
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: start;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+    font-variation-settings: "opsz" 144;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 72;
+  }
+
+  .section-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  /* ================ TRACKER GRID ================ */
+  .tracker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+
+  .tracker {
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px;
+    background: var(--paper);
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+
+  .tracker:hover {
+    background: var(--paper-deep);
+  }
+
+  .tracker:hover .tracker-arrow {
+    transform: translate(4px, -4px);
+  }
+
+  .tracker-org {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .tracker-title {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-variation-settings: "opsz" 24;
+  }
+
+  .tracker-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  .tracker-arrow {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    transition: transform 0.2s;
+    font-size: 18px;
+  }
+
+  /* Featured tracker */
+  .tracker.featured {
+    grid-column: 1 / -1;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 36px;
+  }
+
+  .tracker.featured:hover {
+    background: #0e0a08;
+  }
+
+  .tracker.featured .tracker-org { color: var(--highlight); }
+  .tracker.featured .tracker-desc { color: rgba(244, 237, 225, 0.75); }
+  .tracker.featured .tracker-arrow { color: var(--highlight); }
+  .tracker.featured .tracker-title { font-size: 32px; }
+
+  /* ================ ACTION CATEGORIES ================ */
+  .action-intro {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 680px;
+    margin-bottom: 40px;
+  }
+
+  .action-cat {
+    border-top: 2px solid var(--rule);
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+  }
+
+  .action-cat:last-of-type {
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .action-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .action-label .leverage {
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .action-body h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 36;
+  }
+
+  .action-body p {
+    margin-bottom: 16px;
+  }
+
+  .action-body p:last-child { margin-bottom: 0; }
+
+  .resources {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dotted var(--rule);
+  }
+
+  .resources-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .resources ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+  }
+
+  .resources a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid var(--accent);
+    transition: background 0.15s;
+    padding: 1px 2px;
+  }
+
+  .resources a:hover {
+    background: var(--highlight);
+  }
+
+  .resources a .domain {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 6px;
+    border: none;
+  }
+
+  /* ================ PULL QUOTE ================ */
+  .pullquote {
+    margin: 64px 0;
+    padding: 40px 0;
+    border-top: 4px double var(--rule);
+    border-bottom: 4px double var(--rule);
+    text-align: center;
+  }
+
+  .pullquote blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.3;
+    font-weight: 400;
+    max-width: 760px;
+    margin: 0 auto 16px;
+    font-variation-settings: "opsz" 48;
+  }
+
+  .pullquote cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  /* ================ FOOTER ================ */
+  footer {
+    margin-top: 96px;
+    padding: 40px 0 64px;
+    border-top: 1px solid var(--rule);
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  footer p { margin-bottom: 12px; }
+  footer a { color: var(--ink); border-bottom: 1px dotted var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .colophon {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ================ MOBILE ================ */
+  @media (max-width: 720px) {
+    .wrap { padding: 0 20px; }
+    header { padding: 32px 0 16px; margin-bottom: 32px; }
+    .section-head { grid-template-columns: 1fr; gap: 8px; }
+    .section-num { font-size: 40px; }
+    .action-cat { grid-template-columns: 1fr; gap: 16px; }
+    .action-label { display: flex; gap: 16px; align-items: center; }
+    .action-label .leverage { margin-top: 0; }
+    .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+    nav.toc { gap: 4px; }
+    .tracker.featured { padding: 24px; }
+    .tracker.featured .tracker-title { font-size: 22px; }
+  }
+
+  /* ================ ANIMATIONS ================ */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: reveal 0.8s ease-out forwards;
+    }
+    .reveal-1 { animation-delay: 0.1s; }
+    .reveal-2 { animation-delay: 0.25s; }
+    .reveal-3 { animation-delay: 0.4s; }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="masthead-meta">
+    <span><span class="dot"></span>A Field Guide</span>
+    <span>Updated May 2026</span>
+  </div>
+
+  <h1 class="reveal reveal-1">Defending the<br/><em>2026 Election.</em></h1>
+  <p class="subtitle reveal reveal-2">What's happening to American elections, who's tracking it, and what you can actually do about it.</p>
+
+  <div class="lede reveal reveal-3">
+    <p>For the first time in modern American history, the federal government itself has become a threat to the integrity of U.S. elections. The administration's strategy depends on confusion — a fog of executive orders, investigations, lawsuits, and disinformation that no single person can track in full.</p>
+    <p>This page is a starting point. It collects the most credible trackers monitoring the threat, and the most useful organizations to plug into if you want to do something about it. It is intentionally short. The point is to make the next step obvious.</p>
+  </div>
+</header>
+
+<!-- ============ NAV ============ -->
+<nav class="toc">
+  <a href="#track"><span class="num">01</span><span>Track the threat</span></a>
+  <a href="#act"><span class="num">02</span><span>Take action</span></a>
+  <a href="#share"><span class="num">03</span><span>Share &amp; maintain</span></a>
+</nav>
+
+<!-- ============ TRACK ============ -->
+<section id="track">
+  <div class="section-head">
+    <div class="section-num">01</div>
+    <div>
+      <div class="section-kicker">Part one</div>
+      <h2>Track the threat</h2>
+      <p style="color: var(--muted); margin-top: 8px;">No single dashboard exists. These are the most credible sources, in rough order of usefulness.</p>
+    </div>
+  </div>
+
+  <div class="tracker-grid">
+
+    <a href="https://www.brennancenter.org/our-work/research-reports/trump-administrations-campaign-undermine-next-election" class="tracker featured" target="_blank" rel="noopener">
+      <div class="tracker-org">Brennan Center for Justice</div>
+      <div class="tracker-title">The Trump Administration's Campaign to Undermine the Next Election</div>
+      <div class="tracker-desc">The single most comprehensive chronicle of federal actions against U.S. elections. Connects executive orders, DOJ activity, intimidation of officials, and dismantling of CISA into one coherent narrative. Updated regularly.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://www.brennancenter.org/our-work/research-reports/tracker-justice-department-requests-voter-information" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Brennan Center</div>
+      <div class="tracker-title">DOJ Voter Data Tracker</div>
+      <div class="tracker-desc">Interactive map of which states have been asked for voter rolls, which complied, which were sued.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://www.brennancenter.org/our-work/research-reports/status-trumps-anti-voting-executive-order" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Brennan Center</div>
+      <div class="tracker-title">Executive Order Status</div>
+      <div class="tracker-desc">Provision-by-provision status of Trump's election EOs, including which are blocked in court.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://protectdemocracy.org/executive-override/" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Protect Democracy</div>
+      <div class="tracker-title">Executive Override</div>
+      <div class="tracker-desc">Strategic framing of how the administration is wielding federal power against elections, and how the system can hold.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://www.democracydocket.com/" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Democracy Docket</div>
+      <div class="tracker-title">Anti-Voting Timeline &amp; Litigation News</div>
+      <div class="tracker-desc">Day-to-day reporting on voting rights litigation and DOJ's shift from defending access to challenging it.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://www.justsecurity.org/107087/tracker-litigation-legal-challenges-trump-administration/" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Just Security</div>
+      <div class="tracker-title">Litigation Tracker</div>
+      <div class="tracker-desc">Case-by-case status of every major lawsuit against the administration, including election cases. Indispensable for legal status.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://ucsd.libguides.com/usgov/trumptrackers" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">UC San Diego Library</div>
+      <div class="tracker-title">Master Index of Trackers</div>
+      <div class="tracker-desc">Aggregates every credible Trump-administration tracker in one place — election, immigration, regulatory, redistricting.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+    <a href="https://www.brookings.edu/articles/tracking-trumps-actions-on-tariffs-the-environment-immigration-and-more/" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">Brookings</div>
+      <div class="tracker-title">Regulatory Action Tracker</div>
+      <div class="tracker-desc">Captures election-adjacent regulatory and policy changes alongside other domains.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<div class="pullquote">
+  <blockquote>"Our electoral system is strong. It is run by officials in all 50 states who, by and large, take their responsibilities seriously. If people in key roles follow the law, we will be able to protect the 2026 election."</blockquote>
+  <cite>— Protect Democracy, <em>Executive Override</em></cite>
+</div>
+
+<!-- ============ ACT ============ -->
+<section id="act">
+  <div class="section-head">
+    <div class="section-num">02</div>
+    <div>
+      <div class="section-kicker">Part two</div>
+      <h2>Take action</h2>
+      <p style="color: var(--muted); margin-top: 8px;">Five categories, ordered by impact-per-hour.</p>
+    </div>
+  </div>
+
+  <p class="action-intro">Pick one and commit through November 2026. Sustained engagement with a single organization is dramatically more useful than crisis-driven spikes across many.</p>
+
+  <!-- ACTION 1 -->
+  <div class="action-cat">
+    <div class="action-label">
+      Category 01
+      <span class="leverage">Highest leverage</span>
+    </div>
+    <div class="action-body">
+      <h3>Become a paid poll worker</h3>
+      <p>The integrity of elections lives or dies with the people physically running the precincts. Most local boards of elections are chronically short-staffed. You'll be paid, trained, and embedded inside the actual machinery on Election Day. Apply through your county or municipal Board of Elections.</p>
+      <div class="resources">
+        <div class="resources-label">Get started</div>
+        <ul>
+          <li><a href="https://www.eac.gov/help-america-vote" target="_blank" rel="noopener">EAC: Help America Vote — find your local office<span class="domain">eac.gov</span></a></li>
+          <li><a href="https://www.workelections.com/" target="_blank" rel="noopener">Work Elections — apply by ZIP code<span class="domain">workelections.com</span></a></li>
+          <li><a href="https://www.powerthepolls.org/" target="_blank" rel="noopener">Power the Polls — recruitment hub<span class="domain">powerthepolls.org</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION 2 -->
+  <div class="action-cat">
+    <div class="action-label">
+      Category 02
+      <span class="leverage">High leverage</span>
+    </div>
+    <div class="action-body">
+      <h3>Volunteer with Election Protection</h3>
+      <p>The nation's largest nonpartisan voter protection coalition, run by the Lawyers' Committee for Civil Rights Under Law. Volunteers staff the 866-OUR-VOTE hotline and serve as poll monitors. If you have a JD or are in law school, the legal volunteer track is especially needed.</p>
+      <div class="resources">
+        <div class="resources-label">Sign up</div>
+        <ul>
+          <li><a href="https://866ourvote.org/volunteer/" target="_blank" rel="noopener">Election Protection volunteer signup<span class="domain">866ourvote.org</span></a></li>
+          <li><a href="https://electionprotection.wetheaction.org/" target="_blank" rel="noopener">We The Action — skilled volunteer matching<span class="domain">wetheaction.org</span></a></li>
+          <li><a href="https://protectthevote2026.org/" target="_blank" rel="noopener">Protect The Vote 2026 — swing-state focus<span class="domain">protectthevote2026.org</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION 3 -->
+  <div class="action-cat">
+    <div class="action-label">
+      Category 03
+      <span class="leverage">High $ leverage</span>
+    </div>
+    <div class="action-body">
+      <h3>Fund the litigation infrastructure</h3>
+      <p>Most of the executive orders attacking elections have been blocked because lawyers were in the right courtroom at the right time. This is where money has the highest marginal impact. The Brennan Center, Protect Democracy, ACLU, and the Lawyers' Committee are doing the actual courtroom work that has so far succeeded.</p>
+      <div class="resources">
+        <div class="resources-label">Donate</div>
+        <ul>
+          <li><a href="https://www.brennancenter.org/donate" target="_blank" rel="noopener">Brennan Center for Justice<span class="domain">brennancenter.org</span></a></li>
+          <li><a href="https://protectdemocracy.org/donate/" target="_blank" rel="noopener">Protect Democracy<span class="domain">protectdemocracy.org</span></a></li>
+          <li><a href="https://lawyerscommittee.org/donate/" target="_blank" rel="noopener">Lawyers' Committee for Civil Rights<span class="domain">lawyerscommittee.org</span></a></li>
+          <li><a href="https://electioninnovation.org/donate/" target="_blank" rel="noopener">Center for Election Innovation &amp; Research (funds EOLDN, which legally protects election officials)<span class="domain">electioninnovation.org</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION 4 -->
+  <div class="action-cat">
+    <div class="action-label">
+      Category 04
+      <span class="leverage">Geographic leverage</span>
+    </div>
+    <div class="action-body">
+      <h3>Engage swing states from anywhere</h3>
+      <p>The 2026 House and Senate margins will be decided in Arizona, Georgia, Michigan, Nevada, Pennsylvania, and Wisconsin. If you can't physically travel, phone-banking, postcard programs, and donations to swing-state grassroots groups all work. Mobilize aggregates events nationally; NOPE Neighbors curates vetted recommendations.</p>
+      <div class="resources">
+        <div class="resources-label">Find an opportunity</div>
+        <ul>
+          <li><a href="https://www.mobilize.us/" target="_blank" rel="noopener">Mobilize — search by ZIP and cause<span class="domain">mobilize.us</span></a></li>
+          <li><a href="https://www.nopeneighbors.org/" target="_blank" rel="noopener">NOPE Neighbors — curated, vetted recommendations<span class="domain">nopeneighbors.org</span></a></li>
+          <li><a href="https://votesaveamerica.com/" target="_blank" rel="noopener">Vote Save America<span class="domain">votesaveamerica.com</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION 5 -->
+  <div class="action-cat">
+    <div class="action-label">
+      Category 05
+      <span class="leverage">Civic baseline</span>
+    </div>
+    <div class="action-body">
+      <h3>Engage your own state</h3>
+      <p>State legislators have direct authority to strengthen election security, protect officials from intimidation, and clarify procedures. Even non-swing states matter — a strong state law in Maryland or California can become a model elsewhere. The Brennan Center publishes specific legislative recommendations.</p>
+      <div class="resources">
+        <div class="resources-label">Tools</div>
+        <ul>
+          <li><a href="https://www.brennancenter.org/our-work/research-reports/how-state-legislators-can-protect-election-integrity-and-security" target="_blank" rel="noopener">Brennan Center: state legislator playbook<span class="domain">brennancenter.org</span></a></li>
+          <li><a href="https://www.lwv.org/" target="_blank" rel="noopener">League of Women Voters — local chapters<span class="domain">lwv.org</span></a></li>
+          <li><a href="https://www.commoncause.org/" target="_blank" rel="noopener">Common Cause — state affiliates<span class="domain">commoncause.org</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ SHARE ============ -->
+<section id="share">
+  <div class="section-head">
+    <div class="section-num">03</div>
+    <div>
+      <div class="section-kicker">Part three</div>
+      <h2>Share &amp; maintain</h2>
+    </div>
+  </div>
+
+  <p style="max-width: 680px; font-size: 17px; line-height: 1.6;">If this page is useful, send it to two people. The honest gap in this ecosystem is that nobody has built a single site combining threat-tracking and action — partly because the trackers are 501(c)(3) research groups that legally can't tell you what to do, and the action sites are 501(c)(4)s that don't do rigorous threat analysis. This page is a small attempt to bridge that.</p>
+
+  <p style="max-width: 680px; font-size: 17px; line-height: 1.6; margin-top: 16px;">Source code lives on GitHub. Fork it, fix it, fork it again. The links above will rot — please open issues or PRs when you find broken ones.</p>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <p>This page is a personal civic project, not affiliated with any organization listed above. All trackers and groups linked here are credibly nonpartisan or transparent about their orientation. Inclusion is editorial judgment, not endorsement.</p>
+  <p>Corrections welcome. The threat picture and the resource landscape both change weekly.</p>
+  <div class="colophon">
+    <span>Set in Fraunces &amp; JetBrains Mono</span>
+    <span>Last updated · May 2026</span>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
