@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Defending the 2026 Election — A Field Guide</title>
-<meta name="description" content="A field guide for tracking federal threats to U.S. elections and taking concrete action to defend them." />
-<meta property="og:title" content="Defending the 2026 Election — A Field Guide" />
-<meta property="og:description" content="What's happening, who's tracking it, and what you can actually do." />
+<title>Defend the Next Election — A Field Guide</title>
+<meta name="description" content="What's happening to American elections, who's tracking it, and what you can actually do." />
+<meta property="og:title" content="Defend the Next Election — A Field Guide" />
+<meta property="og:description" content="What's happening to American elections, who's tracking it, and what you can actually do." />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -419,6 +419,38 @@
     color: var(--muted);
   }
 
+  /* Closing quote variant — quieter, more like a coda */
+  .pullquote.coda {
+    margin: 56px 0 0;
+    padding: 32px 0 8px;
+    border-top: 1px solid var(--rule);
+    border-bottom: none;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+  }
+
+  .pullquote.coda::before {
+    content: '\201C';
+    font-family: 'Fraunces', serif;
+    font-size: 96px;
+    line-height: 0.8;
+    color: var(--accent);
+    font-weight: 900;
+  }
+
+  .pullquote.coda blockquote {
+    font-size: clamp(20px, 2.4vw, 26px);
+    text-align: left;
+    margin: 0 0 12px;
+    max-width: none;
+  }
+
+  .pullquote.coda cite {
+    display: block;
+  }
+
   /* ================ FOOTER ================ */
   footer {
     margin-top: 96px;
@@ -459,6 +491,8 @@
     nav.toc { gap: 4px; }
     .tracker.featured { padding: 24px; }
     .tracker.featured .tracker-title { font-size: 22px; }
+    .pullquote.coda { grid-template-columns: 1fr; gap: 8px; }
+    .pullquote.coda::before { font-size: 64px; }
   }
 
   /* ================ ANIMATIONS ================ */
@@ -488,7 +522,7 @@
     <span>Updated May 2026</span>
   </div>
 
-  <h1 class="reveal reveal-1">Defending the<br/><em>2026 Election.</em></h1>
+  <h1 class="reveal reveal-1">Defend the<br/><em>Next Election.</em></h1>
   <p class="subtitle reveal reveal-2">What's happening to American elections, who's tracking it, and what you can actually do about it.</p>
 
   <div class="lede reveal reveal-3">
@@ -578,8 +612,8 @@
 
 <!-- ============ PULL QUOTE ============ -->
 <div class="pullquote">
-  <blockquote>"Our electoral system is strong. It is run by officials in all 50 states who, by and large, take their responsibilities seriously. If people in key roles follow the law, we will be able to protect the 2026 election."</blockquote>
-  <cite>— Protect Democracy, <em>Executive Override</em></cite>
+  <blockquote>"Democracies may die at the hands not of generals but of elected leaders — presidents or prime ministers who subvert the very process that brought them to power."</blockquote>
+  <cite>— Steven Levitsky &amp; Daniel Ziblatt, <em>How Democracies Die</em></cite>
 </div>
 
 <!-- ============ ACT ============ -->
@@ -696,6 +730,12 @@
     </div>
   </div>
 
+  <!-- Coda quote: closes the action section before the call to share -->
+  <div class="pullquote coda">
+    <blockquote>"The greatest menace to freedom is an inert people."</blockquote>
+    <cite>— Justice Louis D. Brandeis</cite>
+  </div>
+
 </section>
 
 <!-- ============ SHARE ============ -->
@@ -724,5 +764,59 @@
 </footer>
 
 </div>
+
+<!-- ============================================================
+     ANALYTICS
+     Cloudflare Web Analytics — privacy-respecting, no cookies.
+     After creating your Cloudflare account and adding this site,
+     replace YOUR_TOKEN_HERE below with the token Cloudflare gives you.
+     ============================================================ -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bead8fab1e8b4eebbfd03d68e41de12e"}'></script>
+
+<!-- ============================================================
+     OUTBOUND LINK TRACKING
+     Sends a custom event to Cloudflare each time a visitor clicks
+     a link to an external site (any tracker or action resource).
+     Lets you see WHICH orgs people actually click through to.
+     ============================================================ -->
+<script>
+(function() {
+  // Wait for the Cloudflare beacon to load
+  function trackOutbound(url, section) {
+    if (window.__cfBeacon && typeof window.__cfBeacon.send === 'function') {
+      // Modern Cloudflare Web Analytics custom event
+      try {
+        window.__cfBeacon.send('event', { name: 'outbound_click', url: url, section: section });
+      } catch (e) { /* fail silently */ }
+    }
+    // Fallback: log to console in dev so you can verify it's firing
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      console.log('[outbound]', section, url);
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    // Only track external http/https links
+    if (!/^https?:\/\//i.test(href)) return;
+    // Skip same-domain links
+    try {
+      var linkHost = new URL(href).hostname;
+      if (linkHost === window.location.hostname) return;
+    } catch (err) { return; }
+
+    // Figure out which section the link is in (tracker / action / share / footer)
+    var section = 'other';
+    var sectionEl = link.closest('section');
+    if (sectionEl && sectionEl.id) section = sectionEl.id;
+    if (link.classList.contains('tracker')) section = 'tracker';
+
+    trackOutbound(href, section);
+  }, true);
+})();
+</script>
+
 </body>
 </html>
