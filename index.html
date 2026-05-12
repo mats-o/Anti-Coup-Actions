@@ -425,26 +425,24 @@
     padding: 32px 0 8px;
     border-top: 1px solid var(--rule);
     border-bottom: none;
-    text-align: left;
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 24px;
+    text-align: center;
   }
 
   .pullquote.coda::before {
     content: '\201C';
+    display: block;
     font-family: 'Fraunces', serif;
-    font-size: 96px;
-    line-height: 0.8;
+    font-size: 64px;
+    line-height: 0.6;
     color: var(--accent);
     font-weight: 900;
+    margin-bottom: 12px;
   }
 
   .pullquote.coda blockquote {
     font-size: clamp(20px, 2.4vw, 26px);
-    text-align: left;
-    margin: 0 0 12px;
-    max-width: none;
+    margin: 0 auto 12px;
+    max-width: 720px;
   }
 
   .pullquote.coda cite {
@@ -491,8 +489,7 @@
     nav.toc { gap: 4px; }
     .tracker.featured { padding: 24px; }
     .tracker.featured .tracker-title { font-size: 22px; }
-    .pullquote.coda { grid-template-columns: 1fr; gap: 8px; }
-    .pullquote.coda::before { font-size: 64px; }
+    .pullquote.coda::before { font-size: 48px; }
   }
 
   /* ================ ANIMATIONS ================ */
@@ -607,6 +604,13 @@
       <span class="tracker-arrow">↗</span>
     </a>
 
+    <a href="https://www.govtrack.us/congress/bills/browse#subject=voting_rights_and_election_administration" class="tracker" target="_blank" rel="noopener">
+      <div class="tracker-org">GovTrack</div>
+      <div class="tracker-title">Live Legislation Tracker</div>
+      <div class="tracker-desc">All federal bills affecting voting rights and election administration, with current status. Useful for knowing what to call your representatives about.</div>
+      <span class="tracker-arrow">↗</span>
+    </a>
+
   </div>
 </section>
 
@@ -638,6 +642,7 @@
     <div class="action-body">
       <h3>Become a paid poll worker</h3>
       <p>The integrity of elections lives or dies with the people physically running the precincts. Most local boards of elections are chronically short-staffed. You'll be paid, trained, and embedded inside the actual machinery on Election Day. Apply through your county or municipal Board of Elections.</p>
+      <p>This matters in every state, not just battlegrounds. Election administration in safe states protects national turnout, local races and ballot questions, and the institutional muscle that will be needed in 2028.</p>
       <div class="resources">
         <div class="resources-label">Get started</div>
         <ul>
@@ -657,12 +662,13 @@
     </div>
     <div class="action-body">
       <h3>Volunteer with Election Protection</h3>
-      <p>The nation's largest nonpartisan voter protection coalition, run by the Lawyers' Committee for Civil Rights Under Law. Volunteers staff the 866-OUR-VOTE hotline and serve as poll monitors. If you have a JD or are in law school, the legal volunteer track is especially needed.</p>
+      <p>The nation's largest nonpartisan voter protection coalition, run by the Lawyers' Committee for Civil Rights Under Law. Volunteers staff the 866-OUR-VOTE hotline and serve as poll monitors during election season. If you have a JD or are in law school, the legal volunteer track is especially needed.</p>
+      <p>If you're a lawyer or skilled professional looking for year-round work — not just on Election Day — We The Action is a separate matching platform that routes pro bono volunteers to voting rights, litigation, and other civil rights organizations across many projects.</p>
       <div class="resources">
         <div class="resources-label">Sign up</div>
         <ul>
-          <li><a href="https://866ourvote.org/volunteer/" target="_blank" rel="noopener">Election Protection volunteer signup<span class="domain">866ourvote.org</span></a></li>
-          <li><a href="https://electionprotection.wetheaction.org/" target="_blank" rel="noopener">We The Action — skilled volunteer matching<span class="domain">wetheaction.org</span></a></li>
+          <li><a href="https://866ourvote.org/volunteer/" target="_blank" rel="noopener">Election Protection — election-cycle voter protection<span class="domain">866ourvote.org</span></a></li>
+          <li><a href="https://www.wetheaction.org/" target="_blank" rel="noopener">We The Action — year-round skilled-volunteer matching<span class="domain">wetheaction.org</span></a></li>
           <li><a href="https://protectthevote2026.org/" target="_blank" rel="noopener">Protect The Vote 2026 — swing-state focus<span class="domain">protectthevote2026.org</span></a></li>
         </ul>
       </div>
@@ -673,11 +679,12 @@
   <div class="action-cat">
     <div class="action-label">
       Category 03
-      <span class="leverage">High $ leverage</span>
+      <span class="leverage">Durable impact</span>
     </div>
     <div class="action-body">
       <h3>Fund the litigation infrastructure</h3>
-      <p>Most of the executive orders attacking elections have been blocked because lawyers were in the right courtroom at the right time. This is where money has the highest marginal impact. The Brennan Center, Protect Democracy, ACLU, and the Lawyers' Committee are doing the actual courtroom work that has so far succeeded.</p>
+      <p>Most of the executive orders attacking elections have been blocked because lawyers were in the right courtroom at the right time. This is where larger donations have the highest marginal impact, and where successful work creates durable legal protections that hold across multiple election cycles. The Brennan Center, Protect Democracy, ACLU, and the Lawyers' Committee are doing the actual courtroom work that has so far succeeded.</p>
+      <p><strong>A note on donation size:</strong> for smaller amounts (under ~$100), grassroots organizations in Category 4 typically go further per dollar. For larger donations, litigation organizations become increasingly cost-effective at scale. Recurring monthly donations of any size outperform one-time donations of the same total.</p>
       <div class="resources">
         <div class="resources-label">Donate</div>
         <ul>
@@ -698,13 +705,35 @@
     </div>
     <div class="action-body">
       <h3>Engage swing states from anywhere</h3>
-      <p>The 2026 House and Senate margins will be decided in Arizona, Georgia, Michigan, Nevada, Pennsylvania, and Wisconsin. If you can't physically travel, phone-banking, postcard programs, and donations to swing-state grassroots groups all work. Mobilize aggregates events nationally; NOPE Neighbors curates vetted recommendations.</p>
+      <p>The 2026 House and Senate margins will be decided in Arizona, Georgia, Michigan, Nevada, Pennsylvania, and Wisconsin. Decades of randomized research show that not all forms of engagement are equally effective — see Donald Green &amp; Alan Gerber, <a href="https://yalebooks.yale.edu/book/9780815732693/get-out-the-vote/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">Get Out the Vote</a>, the standard reference.</p>
+      <p><strong>Best ROI on time:</strong> in-person door-knocking in a competitive race produces roughly one additional vote per 14 contacted voters — the single highest-impact volunteer activity. Phone-banking is second, especially in the final week. Postcards have the lowest measurable effect but are the easiest entry point.</p>
+      <p><strong>Best ROI on money:</strong> donations to local grassroots organizations in swing states outperform donations to national PACs and TV ad buys. Movement Voter Project is the most-cited aggregator for vetted local groups.</p>
       <div class="resources">
-        <div class="resources-label">Find an opportunity</div>
+        <div class="resources-label">Travel or canvass locally (highest impact)</div>
         <ul>
-          <li><a href="https://www.mobilize.us/" target="_blank" rel="noopener">Mobilize — search by ZIP and cause<span class="domain">mobilize.us</span></a></li>
-          <li><a href="https://www.nopeneighbors.org/" target="_blank" rel="noopener">NOPE Neighbors — curated, vetted recommendations<span class="domain">nopeneighbors.org</span></a></li>
-          <li><a href="https://votesaveamerica.com/" target="_blank" rel="noopener">Vote Save America<span class="domain">votesaveamerica.com</span></a></li>
+          <li><a href="https://swingleft.org/" target="_blank" rel="noopener">Swing Left — canvass weekends in target districts<span class="domain">swingleft.org</span></a></li>
+          <li><a href="https://seedthevote.org/" target="_blank" rel="noopener">Seed the Vote — partners with grassroots groups in swing states<span class="domain">seedthevote.org</span></a></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <div class="resources-label">Phone-bank from home (second best on time)</div>
+        <ul>
+          <li><a href="https://indivisible.org/" target="_blank" rel="noopener">Indivisible — local chapter phone banks<span class="domain">indivisible.org</span></a></li>
+          <li><a href="https://www.mobilize.us/" target="_blank" rel="noopener">Mobilize — aggregates phone bank events by ZIP<span class="domain">mobilize.us</span></a></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <div class="resources-label">Donate to swing-state grassroots (best money ROI)</div>
+        <ul>
+          <li><a href="https://movement.vote/" target="_blank" rel="noopener">Movement Voter Project — vetted local grassroots groups<span class="domain">movement.vote</span></a></li>
+          <li><a href="https://votesaveamerica.com/" target="_blank" rel="noopener">Vote Save America — curated donation fund<span class="domain">votesaveamerica.com</span></a></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <div class="resources-label">Lower-effort options</div>
+        <ul>
+          <li><a href="https://votefwd.org/" target="_blank" rel="noopener">Vote Forward — handwritten letters to infrequent voters<span class="domain">votefwd.org</span></a></li>
+          <li><a href="https://votetripling.org/" target="_blank" rel="noopener">Vote Tripling — recruit three friends in swing states<span class="domain">votetripling.org</span></a></li>
         </ul>
       </div>
     </div>
@@ -717,10 +746,18 @@
       <span class="leverage">Civic baseline</span>
     </div>
     <div class="action-body">
-      <h3>Engage your own state</h3>
-      <p>State legislators have direct authority to strengthen election security, protect officials from intimidation, and clarify procedures. Even non-swing states matter — a strong state law in Maryland or California can become a model elsewhere. The Brennan Center publishes specific legislative recommendations.</p>
+      <h3>Engage your representatives — state and federal</h3>
+      <p>Your House member, your two senators, and your state legislators all vote on bills affecting elections. Federal bills like proof-of-citizenship requirements and federal mail-voting restrictions move through Congress; state laws shape how elections are actually run. The same civic muscle covers both — calls, letters, town halls. Calls to a representative's office are logged and counted; staff genuinely track them.</p>
+      <p>Even non-swing states matter — a strong state law in Maryland or California can become a model elsewhere, and a senator under pressure from their constituents is a senator who may vote differently.</p>
       <div class="resources">
-        <div class="resources-label">Tools</div>
+        <div class="resources-label">Find your representatives</div>
+        <ul>
+          <li><a href="https://www.commoncause.org/find-your-representative/" target="_blank" rel="noopener">Common Cause — find federal and state reps by address<span class="domain">commoncause.org</span></a></li>
+          <li><a href="https://5calls.org/" target="_blank" rel="noopener">5 Calls — scripted calls on current legislation, takes 5 minutes<span class="domain">5calls.org</span></a></li>
+        </ul>
+      </div>
+      <div class="resources">
+        <div class="resources-label">State-level civic organizations</div>
         <ul>
           <li><a href="https://www.brennancenter.org/our-work/research-reports/how-state-legislators-can-protect-election-integrity-and-security" target="_blank" rel="noopener">Brennan Center: state legislator playbook<span class="domain">brennancenter.org</span></a></li>
           <li><a href="https://www.lwv.org/" target="_blank" rel="noopener">League of Women Voters — local chapters<span class="domain">lwv.org</span></a></li>
@@ -750,7 +787,7 @@
 
   <p style="max-width: 680px; font-size: 17px; line-height: 1.6;">If this page is useful, send it to two people. The honest gap in this ecosystem is that nobody has built a single site combining threat-tracking and action — partly because the trackers are 501(c)(3) research groups that legally can't tell you what to do, and the action sites are 501(c)(4)s that don't do rigorous threat analysis. This page is a small attempt to bridge that.</p>
 
-  <p style="max-width: 680px; font-size: 17px; line-height: 1.6; margin-top: 16px;">Source code lives on GitHub. Fork it, fix it, fork it again. The links above will rot — please open issues or PRs when you find broken ones.</p>
+  <p style="max-width: 680px; font-size: 17px; line-height: 1.6; margin-top: 16px;">Source code is open on <a href="https://github.com/DefendElections/Defend2028" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">GitHub</a> — anyone can copy it, suggest changes, or build their own version. The links above will rot; email <a href="mailto:contact@defend2028.com" style="color: var(--ink); border-bottom: 1px solid var(--accent);">contact@defend2028.com</a> or open an issue on GitHub when you find broken ones.</p>
 </section>
 
 <!-- ============ FOOTER ============ -->
@@ -767,29 +804,44 @@
 
 <!-- ============================================================
      ANALYTICS
-     Cloudflare Web Analytics — privacy-respecting, no cookies.
-     After creating your Cloudflare account and adding this site,
-     replace YOUR_TOKEN_HERE below with the token Cloudflare gives you.
+     Two privacy-respecting tools running side-by-side:
+     1. Cloudflare Web Analytics — fast site-wide stats, Core Web Vitals
+     2. GoatCounter — referrers and outbound link click counts
+     Neither uses cookies. Neither requires a consent banner.
      ============================================================ -->
+
+<!-- Cloudflare Web Analytics -->
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bead8fab1e8b4eebbfd03d68e41de12e"}'></script>
+
+<!-- GoatCounter Web Analytics -->
+<script data-goatcounter="https://defend2028.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
 <!-- ============================================================
      OUTBOUND LINK TRACKING
-     Sends a custom event to Cloudflare each time a visitor clicks
-     a link to an external site (any tracker or action resource).
-     Lets you see WHICH orgs people actually click through to.
+     Each external link click is sent to both Cloudflare and
+     GoatCounter so you can see WHICH orgs people click through to.
      ============================================================ -->
 <script>
 (function() {
-  // Wait for the Cloudflare beacon to load
   function trackOutbound(url, section) {
+    // Send to Cloudflare Web Analytics (custom event)
     if (window.__cfBeacon && typeof window.__cfBeacon.send === 'function') {
-      // Modern Cloudflare Web Analytics custom event
       try {
         window.__cfBeacon.send('event', { name: 'outbound_click', url: url, section: section });
       } catch (e) { /* fail silently */ }
     }
-    // Fallback: log to console in dev so you can verify it's firing
+    // Send to GoatCounter (logged as a pageview-like event under /outbound/...)
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      try {
+        window.goatcounter.count({
+          path: 'outbound:' + section + ':' + url,
+          title: url,
+          event: true
+        });
+      } catch (e) { /* fail silently */ }
+    }
+    // Local-dev console fallback
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
       console.log('[outbound]', section, url);
     }
@@ -799,15 +851,12 @@
     var link = e.target.closest('a');
     if (!link) return;
     var href = link.getAttribute('href') || '';
-    // Only track external http/https links
     if (!/^https?:\/\//i.test(href)) return;
-    // Skip same-domain links
     try {
       var linkHost = new URL(href).hostname;
       if (linkHost === window.location.hostname) return;
     } catch (err) { return; }
 
-    // Figure out which section the link is in (tracker / action / share / footer)
     var section = 'other';
     var sectionEl = link.closest('section');
     if (sectionEl && sectionEl.id) section = sectionEl.id;
