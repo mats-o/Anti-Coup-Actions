@@ -478,8 +478,8 @@
 
   .budget-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
     margin-top: 16px;
   }
 
@@ -568,6 +568,11 @@
     .tracker.featured { padding: 24px; }
     .tracker.featured .tracker-title { font-size: 22px; }
     .pullquote.coda::before { font-size: 48px; }
+    .budget-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* Tablet/medium: 3 cards get cramped — drop to 1 column */
+  @media (min-width: 721px) and (max-width: 920px) {
     .budget-grid { grid-template-columns: 1fr; gap: 24px; }
   }
 
@@ -809,7 +814,7 @@
         </ul>
       </div>
       <div class="resources">
-        <div class="resources-label">Lower-effort options</div>
+        <div class="resources-label">Easy entry-points</div>
         <ul>
           <li><a href="https://votesaveamerica.com/resources/resource-relational-organizing/" target="_blank" rel="noopener">Vote Save America — step-by-step guide to mobilizing your own network<span class="domain">votesaveamerica.com</span></a></li>
           <li><a href="https://votefwd.org/" target="_blank" rel="noopener">Vote Forward — handwritten letters to infrequent voters<span class="domain">votefwd.org</span></a></li>
@@ -829,14 +834,14 @@
       <p>Your House member, your two senators, and your state legislators all vote on bills affecting elections. Federal bills like proof-of-citizenship requirements and federal mail-voting restrictions move through Congress; state laws shape how elections are actually run. The same civic muscle covers both — calls, letters, town halls. Calls to a representative's office are logged and counted; staff genuinely track them.</p>
       <p>Even non-swing states matter — a strong state law in Maryland or California can become a model elsewhere, and a senator under pressure from their constituents is a senator who may vote differently.</p>
       <div class="resources">
-        <div class="resources-label">Find your representatives</div>
+        <div class="resources-label">Contact your representatives</div>
         <ul>
-          <li><a href="https://www.commoncause.org/find-your-representative/" target="_blank" rel="noopener">Common Cause — find federal and state reps by address<span class="domain">commoncause.org</span></a></li>
           <li><a href="https://5calls.org/" target="_blank" rel="noopener">5 Calls — scripted calls on current legislation, takes 5 minutes<span class="domain">5calls.org</span></a></li>
+          <li><a href="https://www.commoncause.org/find-your-representative/" target="_blank" rel="noopener">Common Cause — find federal and state reps by address<span class="domain">commoncause.org</span></a></li>
         </ul>
       </div>
       <div class="resources">
-        <div class="resources-label">State-level civic organizations</div>
+        <div class="resources-label">Join a state-level civic group</div>
         <ul>
           <li><a href="https://www.brennancenter.org/our-work/research-reports/how-state-legislators-can-protect-election-integrity-and-security" target="_blank" rel="noopener">Brennan Center: state legislator playbook<span class="domain">brennancenter.org</span></a></li>
           <li><a href="https://www.lwv.org/" target="_blank" rel="noopener">League of Women Voters — local chapters<span class="domain">lwv.org</span></a></li>
@@ -849,17 +854,26 @@
   <!-- Time-budget block: two realistic commitment scenarios -->
   <div class="time-budget">
     <div class="time-budget-label">How to spend it</div>
-    <h3>Two realistic commitments</h3>
-    <p style="max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 8px;">If the categories above feel like a lot, here are two budgets sized to a real life. Either is meaningful.</p>
+    <h3>Three realistic commitments</h3>
+    <p style="max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 8px;">If the categories above feel like a lot, here are three budgets sized to a real life. Any of them is meaningful.</p>
 
     <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-hrs">~1–2 hrs <em>across the cycle</em></div>
+        <ul>
+          <li>Make 5 calls via <a href="https://5calls.org/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">5 Calls</a> on bills you care about (~30 min)</li>
+          <li>Plus <a href="https://votesaveamerica.com/resources/resource-relational-organizing/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">text 5–10 people</a> in your network — friends, family, former coworkers — who live in swing states; nudge them again before Election Day (~45 min total)</li>
+          <li>Plus a recurring monthly donation to <a href="#action-litigation" style="color: var(--ink); border-bottom: 1px solid var(--accent);">litigation</a> or <a href="#action-grassroots" style="color: var(--ink); border-bottom: 1px solid var(--accent);">swing-state grassroots</a> organizations (~15 min, runs on autopilot)</li>
+        </ul>
+      </div>
+
       <div class="budget-card">
         <div class="budget-hrs">~5 hrs <em>across the cycle</em></div>
         <ul>
           <li><strong>Either:</strong> volunteer one shift with <a href="https://866ourvote.org/volunteer/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">Election Protection</a> or one shift <a href="https://swingleft.org/p/immediate-impact-team" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">phone banking</a> (~4 hrs)</li>
           <li><strong>Or:</strong> make one call per week via <a href="https://5calls.org/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">5 Calls</a> for 4 months (~4 hrs total)</li>
-          <li>Plus <a href="https://votesaveamerica.com/resources/resource-relational-organizing/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">text 5–10 people</a> in your network — friends, family, former coworkers — who live in swing states; nudge them again before Election Day (~45 min total)</li>
-          <li>Plus a recurring monthly donation to <a href="#action-litigation" style="color: var(--ink); border-bottom: 1px solid var(--accent);">litigation</a> or <a href="#action-grassroots" style="color: var(--ink); border-bottom: 1px solid var(--accent);">swing-state grassroots</a> organizations (~15 min, runs on autopilot)</li>
+          <li>Plus text 5–10 people in your network</li>
+          <li>Plus a recurring monthly donation</li>
         </ul>
       </div>
 
