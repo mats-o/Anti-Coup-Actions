@@ -421,9 +421,9 @@
 
   /* Closing quote variant — quieter, more like a coda */
   .pullquote.coda {
-    margin: 56px 0 0;
-    padding: 32px 0 8px;
-    border-top: 1px solid var(--rule);
+    margin: 32px 0 0;
+    padding: 24px 0 8px;
+    border-top: none;
     border-bottom: none;
     text-align: center;
   }
@@ -447,6 +447,84 @@
 
   .pullquote.coda cite {
     display: block;
+  }
+
+  /* ================ TIME-BUDGET BLOCK ================ */
+  .time-budget {
+    margin-top: 56px;
+    padding: 36px 0 32px;
+    border-top: 2px solid var(--rule);
+    border-bottom: 2px solid var(--rule);
+  }
+
+  .time-budget-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .time-budget h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    font-variation-settings: "opsz" 36;
+  }
+
+  .budget-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 16px;
+  }
+
+  .budget-card {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 20px;
+  }
+
+  .budget-card .budget-hrs {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-variation-settings: "opsz" 72;
+  }
+
+  .budget-card .budget-hrs em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  .budget-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .budget-card li {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .budget-card li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
   }
 
   /* ================ FOOTER ================ */
@@ -490,6 +568,7 @@
     .tracker.featured { padding: 24px; }
     .tracker.featured .tracker-title { font-size: 22px; }
     .pullquote.coda::before { font-size: 48px; }
+    .budget-grid { grid-template-columns: 1fr; gap: 24px; }
   }
 
   /* ================ ANIMATIONS ================ */
@@ -524,7 +603,7 @@
 
   <div class="lede reveal reveal-3">
     <p>For the first time in modern American history, the federal government itself has become a threat to the integrity of U.S. elections. The administration's strategy depends on confusion — a fog of executive orders, investigations, lawsuits, and disinformation that no single person can track in full.</p>
-    <p>This page is a starting point. It collects the most credible trackers monitoring the threat, and the most useful organizations to plug into if you want to do something about it. It is intentionally short. The point is to make the next step obvious.</p>
+    <p>This page is a starting point. It collects the most credible trackers monitoring the threat, and the most useful organizations to plug into if you want to do something about it. It is intentionally short. The 2026 midterms may tip the balance for 2028 — the election most likely to determine whether American democracy survives intact.</p>
   </div>
 </header>
 
@@ -631,7 +710,7 @@
     </div>
   </div>
 
-  <p class="action-intro">Pick one and commit through November 2026. Sustained engagement with a single organization is dramatically more useful than crisis-driven spikes across many.</p>
+  <p class="action-intro">Pick one or more and commit through November 2026. Sustained engagement with a single organization is more useful than stop-start efforts across many.</p>
 
   <!-- ACTION 1 -->
   <div class="action-cat">
@@ -676,7 +755,7 @@
   </div>
 
   <!-- ACTION 3 -->
-  <div class="action-cat">
+  <div class="action-cat" id="action-litigation">
     <div class="action-label">
       Category 03
       <span class="leverage">Durable impact</span>
@@ -698,14 +777,14 @@
   </div>
 
   <!-- ACTION 4 -->
-  <div class="action-cat">
+  <div class="action-cat" id="action-grassroots">
     <div class="action-label">
       Category 04
       <span class="leverage">Geographic leverage</span>
     </div>
     <div class="action-body">
       <h3>Engage swing states from anywhere</h3>
-      <p>The 2026 House and Senate margins will be decided in Arizona, Georgia, Michigan, Nevada, Pennsylvania, and Wisconsin. Decades of randomized research show that not all forms of engagement are equally effective — see Donald Green &amp; Alan Gerber, <a href="https://www.amazon.com/Get-Out-Vote-Increase-Turnout-ebook/dp/B0CFZVSWC6/ref=tmm_kin_swatch_0" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">Get Out the Vote</a>, the standard reference.</p>
+      <p>The 2026 House and Senate margins will be decided in Arizona, Georgia, Michigan, Nevada, Pennsylvania, and Wisconsin. Decades of randomized research show that not all forms of engagement are equally effective — see Donald Green &amp; Alan Gerber, <a href="https://www.amazon.com/Get-Out-Vote-Increase-Turnout-ebook/dp/B0CFZVSWC6/ref=tmm_kin_swatch_0" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">Get Out the Vote</a> (5th ed., Brookings, 2024), the standard reference.</p>
       <p><strong>Best ROI on time:</strong> in-person door-knocking in a competitive race produces roughly one additional vote per 14 contacted voters — the single highest-impact volunteer activity. Phone-banking is second, especially in the final week. Postcards have the lowest measurable effect but are the easiest entry point.</p>
       <p><strong>Best ROI on money:</strong> donations to local grassroots organizations in swing states outperform donations to national PACs and TV ad buys. Movement Voter Project is the most-cited aggregator for vetted local groups.</p>
       <div class="resources">
@@ -718,7 +797,7 @@
       <div class="resources">
         <div class="resources-label">Phone-bank from home (second best on time)</div>
         <ul>
-          <li><a href="https://indivisible.org/" target="_blank" rel="noopener">Indivisible — local chapter phone banks<span class="domain">indivisible.org</span></a></li>
+          <li><a href="https://swingleft.org/p/immediate-impact-team" target="_blank" rel="noopener">Swing Left Immediate Impact Team — remote phone banks with training<span class="domain">swingleft.org</span></a></li>
           <li><a href="https://www.mobilize.us/" target="_blank" rel="noopener">Mobilize — aggregates phone bank events by ZIP<span class="domain">mobilize.us</span></a></li>
         </ul>
       </div>
@@ -732,8 +811,8 @@
       <div class="resources">
         <div class="resources-label">Lower-effort options</div>
         <ul>
+          <li><a href="https://votesaveamerica.com/resources/resource-relational-organizing/" target="_blank" rel="noopener">Vote Save America — step-by-step guide to mobilizing your own network<span class="domain">votesaveamerica.com</span></a></li>
           <li><a href="https://votefwd.org/" target="_blank" rel="noopener">Vote Forward — handwritten letters to infrequent voters<span class="domain">votefwd.org</span></a></li>
-          <li><a href="https://votetripling.org/" target="_blank" rel="noopener">Vote Tripling — recruit three friends in swing states<span class="domain">votetripling.org</span></a></li>
         </ul>
       </div>
     </div>
@@ -762,6 +841,35 @@
           <li><a href="https://www.brennancenter.org/our-work/research-reports/how-state-legislators-can-protect-election-integrity-and-security" target="_blank" rel="noopener">Brennan Center: state legislator playbook<span class="domain">brennancenter.org</span></a></li>
           <li><a href="https://www.lwv.org/" target="_blank" rel="noopener">League of Women Voters — local chapters<span class="domain">lwv.org</span></a></li>
           <li><a href="https://www.commoncause.org/" target="_blank" rel="noopener">Common Cause — state affiliates<span class="domain">commoncause.org</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Time-budget block: two realistic commitment scenarios -->
+  <div class="time-budget">
+    <div class="time-budget-label">How to spend it</div>
+    <h3>Two realistic commitments</h3>
+    <p style="max-width: 680px; font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 8px;">If the categories above feel like a lot, here are two budgets sized to a real life. Either is meaningful.</p>
+
+    <div class="budget-grid">
+      <div class="budget-card">
+        <div class="budget-hrs">~5 hrs <em>across the cycle</em></div>
+        <ul>
+          <li><strong>Either:</strong> volunteer one shift with <a href="https://866ourvote.org/volunteer/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">Election Protection</a> or one shift <a href="https://swingleft.org/p/immediate-impact-team" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">phone banking</a> (~4 hrs)</li>
+          <li><strong>Or:</strong> make one call per week via <a href="https://5calls.org/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">5 Calls</a> for 4 months (~4 hrs total)</li>
+          <li>Plus <a href="https://votesaveamerica.com/resources/resource-relational-organizing/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">text 5–10 people</a> in your network — friends, family, former coworkers — who live in swing states; nudge them again before Election Day (~45 min total)</li>
+          <li>Plus a recurring monthly donation to <a href="#action-litigation" style="color: var(--ink); border-bottom: 1px solid var(--accent);">litigation</a> or <a href="#action-grassroots" style="color: var(--ink); border-bottom: 1px solid var(--accent);">swing-state grassroots</a> organizations (~15 min, runs on autopilot)</li>
+        </ul>
+      </div>
+
+      <div class="budget-card">
+        <div class="budget-hrs">~15 hrs <em>across the cycle</em></div>
+        <ul>
+          <li><strong>Either:</strong> work one election day as a <a href="https://www.eac.gov/help-america-vote" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">paid poll worker</a> (training + shift, ~14 hrs, paid $200–$400)</li>
+          <li><strong>Or:</strong> a <a href="https://swingleft.org/" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid var(--accent);">swing-state canvass weekend</a> (~12 hrs canvassing plus travel; a day trip if you're near a swing state, otherwise plan for an overnight)</li>
+          <li>Plus text 5–10 people in your network</li>
+          <li>Plus a recurring monthly donation</li>
         </ul>
       </div>
     </div>
